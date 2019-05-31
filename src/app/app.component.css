@@ -1,0 +1,15 @@
+#title {
+    background-color: lightseagreen; 
+    padding: 30px;
+    margin: 10px 25px;
+    border-radius: 10px 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.header {
+    background-color: #f0f0ff
+}
+
+div {
+    background-color: #fafafa
+}

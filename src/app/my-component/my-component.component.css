@@ -1,0 +1,44 @@
+div {
+    background-color: aliceblue;
+    padding: 30px;
+    margin: 10px 25px;
+    border-radius: 10px 40px
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  .example-option-img {
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+  
+  [dir='rtl'] .example-option-img {
+    margin-right: 0;
+    margin-left: 8px;
+  }
+
+.example-card {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  .topbar-txt-gauche {
+    text-align: left;
+  }
+
+  .topbar-txt-centre {
+    text-align: center;
+  }
+
+  .topbar-txt-droite {
+    text-align: right;
+  }

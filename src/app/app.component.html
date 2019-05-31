@@ -1,0 +1,15 @@
+<div class="header">
+  <button mat-button [matMenuTriggerFor]="menu" class="header">Language - Langue - 言語</button>
+  <mat-menu #menu="matMenu" class="header">
+    <button mat-menu-item class="header">English</button>
+    <button mat-menu-item class="header">Français</button>
+    <button mat-menu-item class="header">日本語</button>
+  </mat-menu>
+</div>
+<div style="text-align:center">
+  <h1 id="title">
+    Pokédex Angular
+  </h1>
+  <app-my-component (affichagePokemonDemandé)="associerPokemon($event)"></app-my-component>
+  <app-affichage-pkmn [pokemon]="pokemon" *ngIf="isReady"></app-affichage-pkmn>
+</div>

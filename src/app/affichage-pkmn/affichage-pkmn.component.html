@@ -1,0 +1,101 @@
+<!--
+<div class="colorNested" style="height: auto;">
+  <div gdGap="10px" gdColumns="repeat(auto-fill, minmax(50px, 1fr))">
+    <div gdRow="auto / span 3"><img src="{{pokemon.sprite}}"></div>
+    <div gdColumn="auto / span 2">N°: {{ pokemon.id }}</div>
+    <div gdColumn="auto / span 2">Nom : {{ pokemon.name }}</div>
+    <div>Type(s) : {{ pokemon.type1 }}</div>
+    <div>{{ pokemon.type2 }}</div>
+  </div>
+</div>
+-->
+
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-subtitle>
+        N°{{pokemon.id}}
+      </mat-card-subtitle>
+      <mat-card-title>{{ pokemon.names }}</mat-card-title>
+      <mat-card-subtitle>
+        <img src="assets/types/en/{{pokemon.type1}}.png"><img src="assets/types/en/{{pokemon.type2}}.png" alt="">
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <button (click)="jouerCri(pokemon.id)">🔊</button>
+
+    <mat-card-content>
+
+      <div *ngIf="!checked">
+        <img src="{{ pokemon.sprites[0] }}" alt="front_sprite">   
+        <img src="{{ pokemon.sprites[1] }}" alt="">
+      </div>
+  
+      <div *ngIf="checked">
+        <img src="{{ pokemon.sprites[2] }}" alt="front_shiny">   
+        <div class="item">
+          <span class="notify-badge">★</span>
+          <img src="{{ pokemon.sprites[3] }}" alt="">
+        </div>
+      </div>
+  
+      <mat-checkbox [(ngModel)]="checked">Apparence chromatique</mat-checkbox>
+
+      <p>{{pokemon.description}}</p>
+
+      <!--Affichage des stats-->
+      <div class="container"
+      fxLayout
+      fxLayoutAlign="center"
+      fxLayoutGap="10px">
+        <div class="textBar" fxFlex="30%"><p>PV : {{ pokemon.stats[5] }}</p></div>
+        <div class="statsBar" fxFlex="40%">
+          <mat-progress-bar mode="determinate" value="{{ pokemon.stats[5] *100/255}}"></mat-progress-bar>
+        </div>
+      </div>
+      <div class="container"
+      fxLayout
+      fxLayoutAlign="center"
+      fxLayoutGap="10px">
+        <div class="textBar" fxFlex="30%"><p>Attaque : {{ pokemon.stats[4] }}</p></div>
+        <div class="statsBar" fxFlex="40%">
+          <mat-progress-bar mode="determinate" value="{{ pokemon.stats[4] *100/255}}"></mat-progress-bar>
+        </div>
+      </div>
+      <div class="container"
+      fxLayout
+      fxLayoutAlign="center"
+      fxLayoutGap="10px">
+        <div class="textBar" fxFlex="30%"><p>Défense : {{ pokemon.stats[3] }}</p></div>
+        <div class="statsBar" fxFlex="40%">
+          <mat-progress-bar mode="determinate" value="{{ pokemon.stats[3] *100/255}}"></mat-progress-bar>
+        </div>
+      </div>
+      <div class="container"
+      fxLayout
+      fxLayoutAlign="center"
+      fxLayoutGap="10px">
+        <div class="textBar" fxFlex="30%"><p>Attaque Spéciale : {{ pokemon.stats[2] }}</p></div>
+        <div class="statsBar" fxFlex="40%">
+          <mat-progress-bar mode="determinate" value="{{ pokemon.stats[2] *100/255}}"></mat-progress-bar>
+        </div>
+      </div>
+      <div class="container"
+      fxLayout
+      fxLayoutAlign="center"
+      fxLayoutGap="10px">
+        <div class="textBar" fxFlex="30%"><p>Défense Spéciale : {{ pokemon.stats[1] }}</p></div>
+        <div class="statsBar" fxFlex="40%">
+          <mat-progress-bar mode="determinate" value="{{ pokemon.stats[1] *100/255}}"></mat-progress-bar>
+        </div>
+      </div>
+      <div class="container"
+      fxLayout
+      fxLayoutAlign="center"
+      fxLayoutGap="10px">
+        <div class="textBar" fxFlex="30%"><p>Vitesse : {{ pokemon.stats[0] }}</p></div>
+        <div class="statsBar" fxFlex="40%">
+          <mat-progress-bar mode="determinate" value="{{ pokemon.stats[0] *100/255}}"></mat-progress-bar>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>

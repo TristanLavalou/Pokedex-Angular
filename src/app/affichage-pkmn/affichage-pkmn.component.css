@@ -1,0 +1,38 @@
+.example-card {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+mat-progress-bar {
+  margin: 20px 0;
+}
+
+mat-card-title {
+  text-align: left;
+}
+
+mat-card-subtitle {
+  text-align: left
+}
+
+.textBar {
+  text-align: right;
+}
+
+.item {
+  position:relative;
+  padding-top:20px;
+  display:inline-block;
+}
+.notify-badge{
+  position: absolute;
+  right:-20px;
+  top:10px;
+  background:goldenrod;
+  text-align: center;
+  border-radius: 30px 30px 30px 30px;
+  color:white;
+  padding:5px 10px;
+  font-size:10px;
+}
