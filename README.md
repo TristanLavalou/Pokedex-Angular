@@ -17,7 +17,7 @@ En-dessous du titre, on trouve un ```autocomplete```. Celui-ci est relié à un 
 
 Une fois le Pokémon sélectionné, un composant s'ouvre. La barre "de navigation" permet d'accéder au Pokémon précédent ou suivant en cliquant sur le mot voulu. S'affichent ensuite l'ID du Pokémon, ses noms en français, anglais et japonais, son ou ses types, son ou ses talents, son apparence classique (et chromatique via une checkbox) ainsi que ses statistiques de base.
 
-
+Dans la mesure où les questions n'en sont pas vraiment, et constituent plus des indications dans la manière d'avancer, j'ai choisi de ne pas répondre questions par questions, mais de plutôt expliquer la structure de mon appli Angular et d'expliquer les points qui me tiennent à cœur.
 ### Structure
 
 L'appli web est composée d'un composant père appelé ```app.component```. C'est ici que sont liés tous les composants fils entre eux. On en compte 3 :
