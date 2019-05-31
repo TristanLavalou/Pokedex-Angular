@@ -1,14 +1,9 @@
 <div>
-  Recherche : <input type="text" name="input1" [(ngModel)]="id">
-  <select [(ngModel)]="pkmn_selected" *ngIf="isEnded">
-    <option *ngFor="let pkmn of pkmnFullList" [ngValue]="pkmn">{{pkmn.names[1]}}</option>
-  </select>
-  <button (click)="onClickSearch(pkmn_selected.id)">Go !</button>
   <form class="example-form"  *ngIf="isEnded">
     <mat-form-field class="example-full-width">
       <input type="text" placeholder="Sélectionnez un Pokémon" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
       <mat-autocomplete #auto="matAutocomplete">
-        <mat-option (click)="onLog(pkmn_selected.id)" *ngFor="let pkmn of pkmnFullList | filterPokemonPipe:'names':id" [value]="pkmn.names[1]">
+        <mat-option (click)="onClickSearch(pkmn.id)" *ngFor="let pkmn of filteredOptions | async" [value]="pkmn.names[1]">
           <img class="example-option-img" aria-hidden [src]="pkmn.sprites[0]" height="40">
           
           <small>#{{pkmn.id}} </small>

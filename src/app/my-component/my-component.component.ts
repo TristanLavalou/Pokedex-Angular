@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { PokeAPIService } from '../poke-api.service';
 import { Pokemon } from '../pokemon';
 import { Observable, Subscription } from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
 
@@ -19,16 +20,14 @@ export class MyComponentComponent implements OnInit {
 
   constructor(private pokeAPIService: PokeAPIService, private _snackBar: MatSnackBar) { }
 
-  pkmnObservable: Observable<Pokemon[]>;
   pkmnSubscription: Subscription;
-  httpStringRep: string;
-  pkmnNameList: string[] = [];
   pkmnFullList: Pokemon[] = [];
   pokemon: Pokemon;
   pkmnArray: Array<any>;
   isEnded: boolean = false;
   isLoaded: boolean = false;
   myControl = new FormControl();
+  filteredOptions: Observable<Pokemon[]>;
 
   // Fonctions "utilitaires"
   sleepSYNC(temps){
@@ -78,8 +77,25 @@ export class MyComponentComponent implements OnInit {
         this.isEnded = true;
       }
     );
+
+
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map(value => typeof value === 'string' ? value : value.name),
+      map(name => name ? this._filter(name) : this.pkmnFullList.slice())
+    );
   }
   
+  displayFn(pkmn?: Pokemon): string | undefined {
+    return pkmn ? pkmn.names[1] : undefined;
+  }
+
+  private _filter(name: string): Pokemon[] {
+    const filterValue = name.toLowerCase();
+
+    return this.pkmnFullList.filter(option => option.names[1].toLowerCase().indexOf(filterValue) === 0);
+  }
+
   async onClickSearch(pkmnid: number) {
     console.log("ID :"+pkmnid);
     if (pkmnid != null && pkmnid>=1 && pkmnid<=this.pkmnFullList.length) {

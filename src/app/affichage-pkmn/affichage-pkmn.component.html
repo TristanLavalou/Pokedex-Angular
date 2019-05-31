@@ -17,7 +17,7 @@
       </mat-card-subtitle>
       <mat-card-title>{{ pokemon.names }}</mat-card-title>
       <mat-card-subtitle>
-        <img src="assets/types/en/{{pokemon.type1}}.png"><img src="assets/types/en/{{pokemon.type2}}.png" alt="">
+        <img src="assets/types/fr/{{pokemon.type1}}.png"><img src="assets/types/fr/{{pokemon.type2}}.png" alt="">
       </mat-card-subtitle>
     </mat-card-header>
 
@@ -49,7 +49,7 @@
       fxLayoutGap="10px">
         <div class="textBar" fxFlex="30%"><p>PV : {{ pokemon.stats[5] }}</p></div>
         <div class="statsBar" fxFlex="40%">
-          <mat-progress-bar mode="determinate" value="{{ pokemon.stats[5] *100/255}}"></mat-progress-bar>
+          <mat-progress-bar mode="determinate" value="{{ pokemon.stats[5] *100/255}}" color="accent"></mat-progress-bar>
         </div>
       </div>
       <div class="container"
@@ -58,7 +58,7 @@
       fxLayoutGap="10px">
         <div class="textBar" fxFlex="30%"><p>Attaque : {{ pokemon.stats[4] }}</p></div>
         <div class="statsBar" fxFlex="40%">
-          <mat-progress-bar mode="determinate" value="{{ pokemon.stats[4] *100/255}}"></mat-progress-bar>
+          <mat-progress-bar mode="determinate" value="{{ pokemon.stats[4] *100/255}}" color="accent"></mat-progress-bar>
         </div>
       </div>
       <div class="container"
@@ -67,7 +67,7 @@
       fxLayoutGap="10px">
         <div class="textBar" fxFlex="30%"><p>Défense : {{ pokemon.stats[3] }}</p></div>
         <div class="statsBar" fxFlex="40%">
-          <mat-progress-bar mode="determinate" value="{{ pokemon.stats[3] *100/255}}"></mat-progress-bar>
+          <mat-progress-bar mode="determinate" value="{{ pokemon.stats[3] *100/255}}" color="accent"></mat-progress-bar>
         </div>
       </div>
       <div class="container"
@@ -76,7 +76,7 @@
       fxLayoutGap="10px">
         <div class="textBar" fxFlex="30%"><p>Attaque Spéciale : {{ pokemon.stats[2] }}</p></div>
         <div class="statsBar" fxFlex="40%">
-          <mat-progress-bar mode="determinate" value="{{ pokemon.stats[2] *100/255}}"></mat-progress-bar>
+          <mat-progress-bar mode="determinate" value="{{ pokemon.stats[2] *100/255}}" color="accent"></mat-progress-bar>
         </div>
       </div>
       <div class="container"
@@ -85,7 +85,7 @@
       fxLayoutGap="10px">
         <div class="textBar" fxFlex="30%"><p>Défense Spéciale : {{ pokemon.stats[1] }}</p></div>
         <div class="statsBar" fxFlex="40%">
-          <mat-progress-bar mode="determinate" value="{{ pokemon.stats[1] *100/255}}"></mat-progress-bar>
+          <mat-progress-bar mode="determinate" value="{{ pokemon.stats[1] *100/255}}" color="accent"></mat-progress-bar>
         </div>
       </div>
       <div class="container"
@@ -94,7 +94,7 @@
       fxLayoutGap="10px">
         <div class="textBar" fxFlex="30%"><p>Vitesse : {{ pokemon.stats[0] }}</p></div>
         <div class="statsBar" fxFlex="40%">
-          <mat-progress-bar mode="determinate" value="{{ pokemon.stats[0] *100/255}}"></mat-progress-bar>
+          <mat-progress-bar mode="determinate" value="{{ pokemon.stats[0] *100/255}}" color="accent"></mat-progress-bar>
         </div>
       </div>
     </mat-card-content>
