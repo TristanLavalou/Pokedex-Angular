@@ -6,14 +6,16 @@ export class Pokemon {
     sprites: string[];
     stats: string[];
     descriptions: string[];
+    abilities: string[][];
 
-    constructor(pkmnNumber: number, pkmnNames: string[], pkmnType1?: string, pkmnType2?: string, pkmnSprites?: string[], pkmnStats?: string[], pkmnDescriptions?: string[]) {
+    constructor(pkmnNumber: number, pkmnNames: string[], pkmnType1?: string, pkmnType2?: string, pkmnSprites?: string[], pkmnStats?: string[], pkmnAbilities?: string[][], pkmnDescriptions?: string[]) {
         this.id = pkmnNumber;
         this.names = pkmnNames;
         this.type1 = pkmnType1;
         this.type2 = pkmnType2;
         this.sprites = pkmnSprites;
         this.stats = pkmnStats;
+        this.abilities = pkmnAbilities;
         this.descriptions = pkmnDescriptions;
     }
 

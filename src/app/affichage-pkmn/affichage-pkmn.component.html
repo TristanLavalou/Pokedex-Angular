@@ -15,11 +15,13 @@
       <mat-card-subtitle>
         N°{{pokemon.id}}
       </mat-card-subtitle>
-      <mat-card-title>{{ pokemon.names }}</mat-card-title>
+      <mat-card-title>{{ pokemon.names[1] }} - {{ pokemon.names[0] }} - {{ pokemon.names[2] }}</mat-card-title>
       <mat-card-subtitle>
         <img src="assets/types/fr/{{pokemon.type1}}.png"><img src="assets/types/fr/{{pokemon.type2}}.png" alt="">
       </mat-card-subtitle>
     </mat-card-header>
+
+    <div>Talents : {{pokemon.abilities[0][0]}}, {{pokemon.abilities[1][0]}}</div>
 
     <button (click)="jouerCri(pokemon.id)">🔊</button>
 

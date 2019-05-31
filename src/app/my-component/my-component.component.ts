@@ -103,6 +103,8 @@ export class MyComponentComponent implements OnInit {
         (data:any) => {
           var pkmnStats: string[] = [];
           var spritesTab: string[] = [];
+          var abilitiesTab : string[][] = [];
+
           for (var i=0;i<data.stats.length;i++) {
             pkmnStats.push(data.stats[i].base_stat);
           }
@@ -111,11 +113,15 @@ export class MyComponentComponent implements OnInit {
           spritesTab.push(data.sprites.front_shiny);
           spritesTab.push(data.sprites.back_shiny);
 
+          for (var i=0;i<data.abilities.length;i++) {
+            abilitiesTab.push([data.abilities[i].ability.name,data.abilities[i].is_hidden]);
+          }
+
           if (data.types[1]==undefined) {
-            this.pokemon = new Pokemon(data.id, data.name, data.types[0].type.name, null, spritesTab, pkmnStats);
+            this.pokemon = new Pokemon(data.id, data.name, data.types[0].type.name, null, spritesTab, pkmnStats, abilitiesTab);
           }
           else {
-            this.pokemon = new Pokemon(data.id, data.name, data.types[0].type.name, data.types[1].type.name, spritesTab, pkmnStats);
+            this.pokemon = new Pokemon(data.id, data.name, data.types[0].type.name, data.types[1].type.name, spritesTab, pkmnStats, abilitiesTab);
           }
             this.isLoaded = true;
         }
