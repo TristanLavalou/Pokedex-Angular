@@ -13,7 +13,7 @@ L'apparence est la suivante :
 
 En-dessous du titre, on trouve un ```autocomplete```. Celui-ci est relié à un pipe, ce qui permet de filtrer les résultats en fonction de ce que l'on écrit. Il ne marche qu'avec le nom du Pokémon, et pas son ID. Un sprite de chaque Pokémon s'affiche dans la liste pour permettre de mieux les visualiser, cela explique un petit temps de chargement à l'ouverture de la page. Voici l'aperçu lorsque l'on commence à taper dans celle-ci :
 
-<IMG src="Filtre">
+<IMG src="Filtre.png">
 
 Une fois le Pokémon sélectionné, un composant s'ouvre. La barre "de navigation" permet d'accéder au Pokémon précédent ou suivant en cliquant sur le mot voulu. S'affichent ensuite l'ID du Pokémon, ses noms en français, anglais et japonais, son ou ses types, son ou ses talents, son apparence classique (et chromatique via une checkbox) ainsi que ses statistiques de base.
 
@@ -28,7 +28,7 @@ L'appli web est composée d'un composant père appelé ```app.component```. C'es
 
 Dans un premier temps, j'ai suivi les consignes données dans le sujet de TP. Il y avait donc une barre de recherche, un select, et un autre ```input``` disabled qui affichait seulement le texte tapé dans la barre de recherche. Le pipe était mis en place, et en fonction du texte tapé, le nombre d'options du select diminuait. L'affichage était le suivant :
 
-<IMG src="v1.png">
+<IMG src="v1.jpg">
 
 Il a ensuite fallu afficher les informations du Pokémon dans l'autre composant. Pour cela, il faut transmettre les données entre composants. On commence donc par l'exporter de la classe ```my-component``` de la manière suivante :
 ```typescript
